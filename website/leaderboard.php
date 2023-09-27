@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Scary Game Website</title>
     <?php
     function secondsToString($seconds){
         $minutesWithDecimal = $seconds/60;
@@ -16,6 +16,8 @@
         return "$minutes:$seconds";
     }
     ?>
+    <link rel="stylesheet" href="./css/leaderboard.css">
+
 </head>
 <body>
 <table>
@@ -56,27 +58,6 @@
     ?>
     </tbody>
 </table>
-<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
 
-    table th,
-    table td {
-        padding: 10px;
-        border: 1px solid #000000;
-        max-width: 300px; /* Limit the maximum width of table cells */
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    table th {
-        background-color: #d00e0e;
-        color: #000000;
-    }
-</style>
 </body>
-
+</html>
