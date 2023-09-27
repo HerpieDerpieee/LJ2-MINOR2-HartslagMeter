@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+}
+
+#allpage{
+    background-color: yellow;
+    width: 80vw;
+    height: 90vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+#Username{
+    background-color: aqua;
+    width: 80vw;
+    height: 12vh;
+    margin-top: 5vh;
+    font-size: 10vh;
+    text-align: center;
+}
