@@ -2,4 +2,4 @@
 
 $bpm  = rand(60,120);
 
-echo $bpm;
+echo $bpm." BPM";

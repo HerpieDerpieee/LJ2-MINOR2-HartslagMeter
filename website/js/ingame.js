@@ -12,6 +12,7 @@ function checkKeyPressed(evt) {
 }
 function start(){
     started = true;
+    updateBPM()
     document.getElementById('blackscreen').style.opacity = 1;
     setTimeout(() => {
         document.getElementById('tablebody').style.display = 'none';
@@ -41,4 +42,11 @@ function end(){
     setTimeout(() => {
         document.getElementById('blackscreen').style.opacity = 0;
     }, 2000);
+}
+
+function updateBPM(){
+    $( "#bpmtext" ).load("bpm.php");
+    if (started){
+        setTimeout(updateBPM, 1000);
+    }
 }
