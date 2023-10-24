@@ -1,9 +1,14 @@
 *{
     margin: 0;
 }
+body{
+    background-image: url("../img/bgimg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 #allpage{
-    background-color: yellow;
+    background-color: rgba(0,0,0,0.4);
     width: 80vw;
     height: 90vh;
     margin-left: 10vw;
@@ -13,10 +18,68 @@
 }
 
 #Username{
-    background-color: aqua;
+    background-color: rgba(0,0,0,0.6);
     width: 80vw;
     height: 12vh;
     margin-top: 5vh;
     font-size: 10vh;
+    color: white;
     text-align: center;
+}
+
+#grid{
+    margin-top: 12vh;
+    display: grid;
+    grid-template-areas:
+    'bpm bpm time';
+    column-gap: 3vw;
+}
+
+#bpm{
+    grid-area: bpm;
+    background-color: rgba(0,0,0,0.6);
+    width: 50vw;
+    height: 35vh;
+    border: black 5px solid;
+    font-size: 10vh;
+    display: grid;
+    grid-template-areas:
+    'bpmt bpmt hart';
+}
+
+.text{
+    margin-left: 40px;
+    margin-top: 11vh;
+    margin-bottom: 11vh;
+    color: white;
+}
+
+#bpmtext{
+    grid-area: bpmt;
+}
+
+#hart{
+    grid-area: hart;
+    transition: 1.5s;
+}
+
+#time{
+    grid-area: time;
+    background-color: rgba(0,0,0,0.6);
+    width: 26vw;
+    height: 35vh;
+    border: black 5px solid;
+    font-size: 10vh;
+    display: grid;
+    grid-template-areas:
+    't t klok';
+}
+
+#tijd{
+    grid-area: t;
+}
+
+#klok{
+    margin-top: 5vh;
+    grid-area: klok;
 }
