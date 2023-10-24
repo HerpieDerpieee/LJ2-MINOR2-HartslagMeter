@@ -1,0 +1,21 @@
+#blackscreen{
+    background-image: url("../img/bgimg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    opacity: 0;
+    transition: 2s;
+}
+
+#tablebody{
+    /* is display flex*/
+    display: flex;
+}
+
+#ingamebody{
+    /* is display flex*/
+    display: none;
+}

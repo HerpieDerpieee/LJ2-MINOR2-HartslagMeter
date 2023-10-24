@@ -1,14 +1,14 @@
 *{
     margin: 0;
 }
-body{
+#ingamebody{
     background-image: url("../img/bgimg.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #allpage{
-    background-color: rgba(0,0,0,0.4);
+    /*background-color: rgba(0,0,0,0.4);*/
     width: 80vw;
     height: 90vh;
     margin-left: 10vw;
