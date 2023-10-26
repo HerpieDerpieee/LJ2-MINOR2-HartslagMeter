@@ -32,11 +32,6 @@
     </tr>
     </thead>
     <tbody>
-    <td>Place</td>
-    <td>Username</td>
-    <td>Peak BPM</td>
-    <td>Duration</td>
-    <!--
     <?php
     require_once "db.php";
 
@@ -62,7 +57,7 @@
         echo "0 results";
     }
     $conn->close();
-    ?>-->
+    ?>
     </tbody>
   </table>
 
