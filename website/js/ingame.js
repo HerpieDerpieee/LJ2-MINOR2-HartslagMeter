@@ -11,6 +11,7 @@ function checkKeyPressed(evt) {
     }
 }
 function start(){
+    document.querySelector("#Username").innerHTML = prompt("Wat is dou naam");
     started = true;
     updateBPM()
     document.getElementById('blackscreen').style.opacity = 1;
