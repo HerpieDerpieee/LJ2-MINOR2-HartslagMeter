@@ -4,9 +4,9 @@ window.addEventListener("keydown", checkKeyPressed, false);
 
 function checkKeyPressed(evt) {
     console.log(evt.keyCode)
-    if (evt.keyCode.toString() === "83" && started === false) {
+    if (evt.keyCode.toString() === "83" && evt.shiftKey && started === false) {
         start()
-    } else if (evt.keyCode.toString() === "83" && started === true) {
+    } else if (evt.keyCode.toString() === "83" && evt.shiftKey && started === true) {
         end()
     }
 }
@@ -25,6 +25,10 @@ function start(){
     setTimeout(() => {
         document.getElementById('blackscreen').style.opacity = 0;
     }, 2000);
+
+    setTimeout(() => {
+        countTimer()
+    }, 1000);
 }
 
 function end(){
@@ -48,5 +52,28 @@ function updateBPM(){
     $( "#bpmtext" ).load("bpm.php");
     if (started){
         setTimeout(updateBPM, 1000);
+    }
+}
+
+
+var totalSeconds = 0;
+function countTimer() {
+    ++totalSeconds;
+    var minute = Math.floor(totalSeconds / 60);
+    var seconds = totalSeconds - minute * 60;
+
+    if (started == false) {
+        totalSeconds = 0;
+        minute = 0;
+        seconds = 0;
+    } else {
+        if (minute < 10)
+            minute = "0" + minute;
+        if (seconds < 10)
+            seconds = "0" + seconds;
+        document.getElementById("tijd").innerHTML = minute + ":" + seconds;
+        setTimeout(() => {
+            countTimer()
+        }, 1000);
     }
 }
