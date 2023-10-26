@@ -6,6 +6,15 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Scary Game Website</title>
+    <?php
+    function secondsToString($seconds){
+        $minutesWithDecimal = $seconds/60;
+        $minutes = floor($minutesWithDecimal);
+        $secondsInDecimal = $minutesWithDecimal-$minutes;
+        $seconds = str_pad(($secondsInDecimal*60), 2, '0', STR_PAD_LEFT);
+
+        return "$minutes:$seconds";
+    } ?>
   <link rel="stylesheet" href="./css/leaderboard.css">
   <link rel="stylesheet" href="css/blackscreen.css">
   <link rel="stylesheet" href="css/ingame.css">
