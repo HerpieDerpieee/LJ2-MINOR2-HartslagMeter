@@ -1,7 +1,7 @@
 <?php
 include "db.php";
 
-$SQLQ= "SELECT lastBPM, peakBPM FROM IOT_Scores ORDER BY 'id' DESC LIMIT 1";
+$SQLQ= "SELECT * FROM `IOT_Scores` ORDER BY `IOT_Scores`.`id` DESC;";
 $result = $conn->query($SQLQ);
 $row = $result->fetch_assoc();
 $bpm  = $row["lastBPM"];
