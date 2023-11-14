@@ -11,8 +11,17 @@ function checkKeyPressed(evt) {
     }
 }
 function start(){
-    document.querySelector("#Username").innerHTML = prompt("Wat is dou naam");
+    const username = prompt("Wat is dou naam");
+    document.querySelector("#Username").innerHTML = username
     started = true;
+    $.post("https://89618.stu.sd-lab.nl/LJ2/BEROEPS2/Hartslag/createRow.php",
+        {
+            username: username,
+        },
+        function(data, status){
+            console.error("Data: " + data + "\nStatus: " + status);
+        }
+    );
     updateBPM()
     document.getElementById('blackscreen').style.opacity = 1;
     setTimeout(() => {
