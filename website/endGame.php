@@ -7,10 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Use prepared statements to prevent SQL injection
     $stmt = $conn->prepare("UPDATE IOT_Scores SET duration=? WHERE id=(SELECT MAX(id) FROM IOT_Scores)");
-    $stmt->bind_param("i", $bpm);
+    $stmt->bind_param("i", $duration);
 
     if ($stmt->execute()) {
-        echo "New record created successfully: ".$bpm;
+        echo "New record created successfully: ".$duration;
     } else {
         echo "Error: " . $stmt->error;
     }
