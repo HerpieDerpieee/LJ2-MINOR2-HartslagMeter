@@ -11,7 +11,7 @@ function checkKeyPressed(evt) {
     }
 }
 function start(){
-    const username = prompt("Wat is dou naam");
+    const username = prompt("Wat is uw naam");
     document.querySelector("#Username").innerHTML = username
     started = true;
     $.post("https://89618.stu.sd-lab.nl/LJ2/BEROEPS2/Hartslag/createRow.php",
@@ -41,22 +41,7 @@ function start(){
     }, 1000);
 }
 
-function end(){
-    started = false;
-    document.getElementById('blackscreen').style.opacity = 1;
 
-    setTimeout(() => {
-        document.getElementById('ingamebody').style.display = 'none';
-    }, 2000);
-
-    setTimeout(() => {
-        document.getElementById('tablebody').style.display = 'flex';
-    }, 2000);
-
-    setTimeout(() => {
-        document.getElementById('blackscreen').style.opacity = 0;
-    }, 2000);
-}
 
 function updateBPM(){
     $( "#bpmtext" ).load("bpm.php");
@@ -66,11 +51,13 @@ function updateBPM(){
 }
 
 
-var totalSeconds = 0;
+let totalSeconds = 0;
+let minute = 0
+let seconds = 0
 function countTimer() {
     ++totalSeconds;
-    var minute = Math.floor(totalSeconds / 60);
-    var seconds = totalSeconds - minute * 60;
+     minute = Math.floor(totalSeconds / 60);
+     seconds = totalSeconds - minute * 60;
 
     if (started == false) {
         totalSeconds = 0;
@@ -86,4 +73,25 @@ function countTimer() {
             countTimer()
         }, 1000);
     }
+}
+
+function end(){
+    console.log(minute + ":" + seconds);
+
+    started = false;
+
+
+    document.getElementById('blackscreen').style.opacity = 1;
+
+    setTimeout(() => {
+        document.getElementById('ingamebody').style.display = 'none';
+    }, 2000);
+
+    setTimeout(() => {
+        document.getElementById('tablebody').style.display = 'flex';
+    }, 2000);
+
+    setTimeout(() => {
+        document.getElementById('blackscreen').style.opacity = 0;
+    }, 2000);
 }
