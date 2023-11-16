@@ -14,7 +14,7 @@ function start(){
     const username = prompt("Wat is uw naam");
     document.querySelector("#Username").innerHTML = username
     started = true;
-    $.post("https://89618.stu.sd-lab.nl/LJ2/BEROEPS2/Hartslag/createRow.php",
+    $.post("https://89618.stu.sd-lab.nl/LJ2/BEROEPS2/Hartslag/website/createRow.php",
         {
             username: username,
         },
@@ -76,7 +76,15 @@ function countTimer() {
 }
 
 function end(){
-    console.log(minute + ":" + seconds);
+    let duration = minute * 60 + seconds
+    $.post("https://89618.stu.sd-lab.nl/LJ2/BEROEPS2/Hartslag/website/endGame.php",
+        {
+            duration: duration,
+        },
+        function(data, status){
+            console.error("Data: " + data + "\nStatus: " + status);
+        }
+    );
 
     started = false;
 

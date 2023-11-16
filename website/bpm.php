@@ -17,3 +17,5 @@ if ($highestbpm<$bpm){
 }elseif ($highestbpm>$bpm){
 echo "<script> console.log(".$highestbpm.")</script>";
 }
+
+
