@@ -1,7 +1,7 @@
 <?php
 require_once "db.php";
 
-$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$sql = "SELECT running FROM IOT_Running";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

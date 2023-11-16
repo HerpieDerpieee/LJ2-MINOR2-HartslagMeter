@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("s", $username);
     $stmand = $conn->prepare("UPDATE IOT_Running SET running = 1 ");
 
-   
+
 
 
     if ($stmt->execute()) {
