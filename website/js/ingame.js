@@ -102,4 +102,6 @@ function end(){
     setTimeout(() => {
         document.getElementById('blackscreen').style.opacity = 0;
     }, 2000);
+
+    window.location.reload();
 }

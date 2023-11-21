@@ -44,7 +44,7 @@
     <?php
     require_once "db.php";
 
-    $sql = "SELECT * FROM IOT_Scores ORDER BY peakBPM ASC";
+    $sql = "SELECT * FROM IOT_Scores ORDER BY peakBPM ASC LIMIT 25";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
